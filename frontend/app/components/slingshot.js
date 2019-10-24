@@ -26,7 +26,7 @@ class Slingshot {
         y,
       },
       bodyB: body,
-      stiffness: 0.01,
+      stiffness: 0.05,
       length: 100,
     }
 
