@@ -27,6 +27,58 @@ function gamePlay() {
     touchCurrentY = camera.mouseY
   }
 
+  // Spawn a bird every second
+  ;(() => {
+    birdTimer += 1 / 60
+
+    const interval = isMobile ? 0.85 : 1
+    const birdSize = isMobile ? 1.5 : 2
+
+    if (birdTimer >= interval) {
+      const birdType = random(birdTypes)
+
+      const pushBird = () => {
+        birds.push(
+          new GameObject(
+            {
+              x: random(0, width),
+              y: 0 - objSize * random(2, 4),
+            },
+            { radius: objSize * birdSize },
+            {
+              shape: 'circle',
+              image: birdType.image,
+              movable: false,
+              rotate: Koji.config.strings.rotateFallingBirds || true,
+              type: birdType.type,
+              scoreGivenAfterBusting: birdType.scoreGivenAfterBusting,
+              scoreGivenAfterOut: birdType.scoreGivenAfterOut,
+            }
+          )
+        )
+      }
+
+      pushBird()
+
+      birdTimer = 0
+    }
+  })()
+
+  // Make the mouse constraint only work for movable bodies
+  World.remove(world, mConstraint) // No mouse movement by default
+  toBeMovedBody = mConstraint.body ? mConstraint.body : null
+  if (toBeMovedBody && toBeMovedBody.movable) {
+    // If the body is movable, let mouse do it's work!
+    mConstraint.pointA = mouse.position
+    mConstraint.bodyB = toBeMovedBody
+    mConstraint.pointB = {
+      x: mouse.position.x - toBeMovedBody.position.x,
+      y: mouse.position.y - toBeMovedBody.position.y,
+    }
+    mConstraint.angleB = toBeMovedBody.angle
+    World.add(world, mConstraint)
+  }
+
   // InGame UI
   removeEmptyEnemies()
 
@@ -34,7 +86,14 @@ function gamePlay() {
 
   // Show
   shootingPig.show()
+  shootingPig.removeAfterGoneOutOfFrame()
   slingshot.show()
+
+  // Birds
+  birds.forEach(bird => {
+    bird.show()
+    bird.removeAfterGoneOutOfFrame()
+  })
 
   if (cameraTarget) {
     camera.position.x = Smooth(

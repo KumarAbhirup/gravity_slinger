@@ -223,6 +223,10 @@ class GameObject {
     pop()
   }
 
+  removeAfterGoneOutOfFrame() {
+    if (this.wentOutOfFrame()) this.destruct()
+  }
+
   // Rotate the object
   rotate(degrees, rotateSpeed = 0.1, mode = 'auto') {
     const effectiveDegrees =

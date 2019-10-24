@@ -36,10 +36,15 @@ let slingshot
 let emojis = []
 let emojiCooldown = 0
 
+let birdTypes
+
 // Matter.js
 let world
 let engine
+let render
 let mConstraint
+let mouse
+let toBeMovedBody
 
 // Koji-Dispatch specific
 let dispatch
@@ -65,6 +70,7 @@ let score = 0
 let comboTexts = []
 
 // Images
+let imgBirds = []
 let imgLife
 let imgBackground
 
@@ -88,6 +94,8 @@ let startingGameTimer
 let gameTimer
 let gameTimerEnabled = false
 let gameOverRectangleHeight = 0 // for game over animation
+
+let birdTimer = 0
 
 let loadingAnimationTimer = 0
 
@@ -139,6 +147,10 @@ function preload() {
   }
 
   // Load images
+  imgBirds[0] = loadImage(Koji.config.images.birdImage1)
+  imgBirds[1] = loadImage(Koji.config.images.birdImage2)
+  imgBirds[2] = loadImage(Koji.config.images.birdImage3)
+
   imgLife = loadImage(Koji.config.images.lifeIcon)
   soundImage = loadImage(Koji.config.images.soundImage)
   muteImage = loadImage(Koji.config.images.muteImage)
@@ -203,6 +215,28 @@ function instantiate() {
     shootingPig.body
   )
 
+  // Bird Types
+  birdTypes = [
+    {
+      type: 0,
+      image: imgBirds[0],
+      scoreGivenAfterBusting: 50,
+      scoreGivenAfterOut: -50,
+    },
+    {
+      type: 1,
+      image: imgBirds[1],
+      scoreGivenAfterBusting: 25,
+      scoreGivenAfterOut: -5,
+    },
+    {
+      type: 2,
+      image: imgBirds[2],
+      scoreGivenAfterBusting: -100,
+      scoreGivenAfterOut: 0,
+    },
+  ]
+
   // Instantiate Emojis
   for (let i = 0; i < Koji.config.strings.emojis.length; i++) {
     let emojiSize = objSize * 2
@@ -250,9 +284,9 @@ function setup() {
   engine = Engine.create()
   world = engine.world
 
-  engine.world.gravity.y = 1
+  engine.world.gravity.y = 0.5
 
-  const mouse = Mouse.create(canvas.elt)
+  mouse = Mouse.create(canvas.elt)
   const options = {
     mouse,
   }
@@ -348,7 +382,7 @@ function draw() {
     window.setAppView('mainMenu')
   } else {
     gamePlay()
-    Matter.Engine.update(engine)
+    Engine.update(engine)
   }
 
   soundButton.render()
@@ -484,6 +518,13 @@ function cleanup() {
   for (let i = 0; i < enemies.length; i++) {
     if (enemies[i].removable) {
       enemies.splice(i, 1)
+    }
+  }
+
+  // Clean Birds
+  for (let i = 0; i < birds.length; i++) {
+    if (birds[i].removable) {
+      birds.splice(i, 1)
     }
   }
 }

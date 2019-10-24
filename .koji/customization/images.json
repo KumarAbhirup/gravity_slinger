@@ -1,5 +1,8 @@
 {
   "images": {
+    "birdImage1": "https://images.koji-cdn.com/23315a20-566e-4602-beb7-be1eb766391d/8d9525da0d7c4698b2933b977ecd87da.png",
+    "birdImage2": "https://images.koji-cdn.com/23315a20-566e-4602-beb7-be1eb766391d/star.png",
+    "birdImage3": "https://i.ibb.co/f9pZjgw/grna.png",
     "soundImage": "https://i.imgur.com/rtFppa8.png",
     "muteImage": "https://i.imgur.com/AR7C733.png",
     "lifeIcon": "https://i.imgur.com/39e9e4h.png",
@@ -20,62 +23,83 @@
     ],
     "explosion": "https://i.imgur.com/QT2LYN4.png"
   },
-  "@@editor": [{
-    "key": "images",
-    "name": "Images",
-    "icon": "💪🏻",
-    "source": "images.json",
-    "fields": [{
-        "key": "soundImage",
-        "name": "Sound Icon",
-        "description": "Ideal size: 32x32",
-        "type": "image"
-      },
-      {
-        "key": "muteImage",
-        "name": "Mute Icon",
-        "description": "Ideal size: 32x32",
-        "type": "image"
-      },
-      {
-        "key": "lifeIcon",
-        "name": "Life Icon",
-        "description": "Ideal size: 96x96",
-        "type": "image"
-      },
-      {
-        "key": "background",
-        "name": "Background",
-        "description": "Leave empty if you want to use a solid color. Ideal size: any, but keep in mind it could deform based on screen size",
-        "type": "image"
-      },
-      {
-        "key": "backgroundInGame",
-        "name": "Background for Gaming Screen",
-        "description": "Leave empty if you want to use a solid color. Ideal size: any, but keep in mind it could deform based on screen size",
-        "type": "image"
-      },
-      {
-        "key": "backgroundInArena",
-        "name": "Background Texture of Arena",
-        "description": "Use a texture so that movement can be understood.",
-        "type": "image"
-      },
-      {
-        "key": "player",
-        "name": "Player",
-        "description": "Ideal size 196x196 and a circular shape to ensure proper collisions.",
-        "type": "image[]",
-        "arrayOptions": {
-          "min": 1
+  "@@editor": [
+    {
+      "key": "images",
+      "name": "Images",
+      "icon": "💪🏻",
+      "source": "images.json",
+      "fields": [
+        {
+          "key": "birdImage1",
+          "name": "Ball Image 1",
+          "description": "Ideal size: 100x100",
+          "type": "image"
+        },
+        {
+          "key": "birdImage2",
+          "name": "Ball Image 2",
+          "description": "Ideal size: 100x100",
+          "type": "image"
+        },
+        {
+          "key": "birdImage3",
+          "name": "Bomb Image",
+          "description": "Ideal size: 100x100. This image should have a negative sentiment showing that clicking the circle with this image would be dangerous.",
+          "type": "image"
+        },
+        {
+          "key": "soundImage",
+          "name": "Sound Icon",
+          "description": "Ideal size: 32x32",
+          "type": "image"
+        },
+        {
+          "key": "muteImage",
+          "name": "Mute Icon",
+          "description": "Ideal size: 32x32",
+          "type": "image"
+        },
+        {
+          "key": "lifeIcon",
+          "name": "Life Icon",
+          "description": "Ideal size: 96x96",
+          "type": "image"
+        },
+        {
+          "key": "background",
+          "name": "Background",
+          "description": "Leave empty if you want to use a solid color. Ideal size: any, but keep in mind it could deform based on screen size",
+          "type": "image"
+        },
+        {
+          "key": "backgroundInGame",
+          "name": "Background for Gaming Screen",
+          "description": "Leave empty if you want to use a solid color. Ideal size: any, but keep in mind it could deform based on screen size",
+          "type": "image"
+        },
+        {
+          "key": "backgroundInArena",
+          "name": "Background Texture of Arena",
+          "description": "Use a texture so that movement can be understood.",
+          "type": "image"
+        },
+        {
+          "key": "player",
+          "name": "Player",
+          "description": "Ideal size 196x196 and a circular shape to ensure proper collisions.",
+          "type": "image[]",
+          "arrayOptions": {
+            "min": 1
+          }
+        },
+        {
+          "key": "explosion",
+          "name": "Explosion",
+          "description": "Might appear when you shoot on boundaries.",
+          "type": "image"
         }
-      },
-      {
-        "key": "explosion",
-        "name": "Explosion",
-        "description": "Might appear when you shoot on boundaries.",
-        "type": "image"
-      }
-    ]
-  }]
+      ]
+    }
+  ]
 }
