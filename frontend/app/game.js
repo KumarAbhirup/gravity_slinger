@@ -86,7 +86,6 @@ function gamePlay() {
 
   // Show
   shootingPig.show()
-  shootingPig.removeAfterGoneOutOfFrame()
   slingshot.show()
 
   // Birds

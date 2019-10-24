@@ -624,6 +624,16 @@ function keyPressed() {
         )
       }
     }
+
+    if (key === ' ') {
+      shootingPig.destruct()
+      shootingPig = new GameObject(
+        { x: width / 2, y: height / 2 },
+        { radius: 1 * objSize },
+        { shape: 'circle', color: '#ffff00', movable: true, rotate: true }
+      )
+      slingshot.attach(shootingPig.body)
+    }
   }
 
   // After quitting
