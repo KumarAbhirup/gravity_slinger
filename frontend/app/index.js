@@ -1,3 +1,4 @@
+/* eslint-disable prefer-destructuring */
 /* eslint-disable no-restricted-syntax */
 /* eslint-disable no-plusplus */
 /* eslint-disable no-use-before-define */
@@ -5,6 +6,8 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
 /* eslint-disable prefer-const */
+
+const { Engine, World, Bodies, Mouse, MouseConstraint, Constraint } = Matter
 
 // Strict Stuffs (EDITING THESE WILL MAKE GAME CRASH)
 let myFont // The font we'll use throughout the app
@@ -28,6 +31,12 @@ let enemies = []
 // Game Stuffs (READ-N-WRITE)
 let emojis = []
 let emojiCooldown = 0
+
+// Matter.js
+let world
+let engine
+let mConstraint
+let slingshot
 
 // Koji-Dispatch specific
 let dispatch
@@ -200,7 +209,7 @@ function setup() {
     sizeModifier = 1
   }
 
-  createCanvas(width, height)
+  const canvas = createCanvas(width, height)
 
   // Magically determine basic object size depending on size of the screen
   objSize = floor(
@@ -221,6 +230,20 @@ function setup() {
   gameBeginning = false
   gameOver = false
   canEnd = false
+
+  // Matter.js
+  engine = Engine.create()
+  world = engine.world
+
+  const mouse = Mouse.create(canvas.elt)
+  const options = {
+    mouse,
+  }
+
+  // A fix for HiDPI displays
+  mouse.pixelRatio = pixelDensity()
+  mConstraint = MouseConstraint.create(engine, options)
+  World.add(world, mConstraint)
 
   /**
    * Load music asynchronously and play once it's loaded
@@ -308,6 +331,7 @@ function draw() {
     window.setAppView('mainMenu')
   } else {
     gamePlay()
+    Matter.Engine.update(engine)
   }
 
   soundButton.render()
