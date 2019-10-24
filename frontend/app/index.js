@@ -28,6 +28,10 @@ let particles = []
 let player
 let enemies = []
 
+let birds = []
+let shootingPig
+let slingshot
+
 // Game Stuffs (READ-N-WRITE)
 let emojis = []
 let emojiCooldown = 0
@@ -36,7 +40,6 @@ let emojiCooldown = 0
 let world
 let engine
 let mConstraint
-let slingshot
 
 // Koji-Dispatch specific
 let dispatch
@@ -188,6 +191,18 @@ function instantiate() {
   )
   player.id = dispatch.clientId
 
+  shootingPig = new GameObject(
+    { x: width / 2, y: height / 2 },
+    { radius: 1 * objSize },
+    { shape: 'circle', color: '#ffff00', movable: true, rotate: true }
+  )
+
+  slingshot = new Slingshot(
+    width / 2,
+    height / 2 + height * 0.15,
+    shootingPig.body
+  )
+
   // Instantiate Emojis
   for (let i = 0; i < Koji.config.strings.emojis.length; i++) {
     let emojiSize = objSize * 2
@@ -234,6 +249,8 @@ function setup() {
   // Matter.js
   engine = Engine.create()
   world = engine.world
+
+  engine.world.gravity.y = 1
 
   const mouse = Mouse.create(canvas.elt)
   const options = {
@@ -608,9 +625,9 @@ function init() {
   // Keep everyone at their original place
   instantiate()
 
-  camera.position.x = player.body.position.x
-  camera.position.y = player.body.position.y
-  cameraTarget = player
+  camera.position.x = shootingPig.x
+  camera.position.y = shootingPig.y
+  cameraTarget = { body: { position: { x: slingshot.x, y: slingshot.y } } }
 
   /**
    * In multiplayer games as of now,

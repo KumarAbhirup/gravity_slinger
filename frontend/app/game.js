@@ -32,6 +32,10 @@ function gamePlay() {
 
   camera.on()
 
+  // Show
+  shootingPig.show()
+  slingshot.show()
+
   if (cameraTarget) {
     camera.position.x = Smooth(
       camera.position.x,
