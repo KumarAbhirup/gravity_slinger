@@ -244,8 +244,6 @@ function setup() {
   dispatch.on('enemy_update', payload => {
     enemies.forEach(enemy => {
       if (enemy.id === payload.id) {
-        enemy.body.position.x = payload.posX
-        enemy.body.position.y = payload.posY
         enemy.score = payload.score
         enemy.lives = payload.lives
         enemy.name = payload.name
@@ -350,8 +348,6 @@ function manageData() {
     dispatch.emitEvent('enemy_update', {
       id: dispatch.clientId,
       name: dispatch.userInfo.playerName,
-      posX: Math.floor(player.body.position.x),
-      posY: Math.floor(player.body.position.y),
       score,
       lives,
     })

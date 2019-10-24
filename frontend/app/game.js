@@ -32,14 +32,6 @@ function gamePlay() {
 
   camera.on()
 
-  player.show()
-  player.showPlayerName()
-
-  enemies.forEach(enemy => {
-    enemy.show()
-    enemy.showPlayerName()
-  })
-
   if (cameraTarget) {
     camera.position.x = Smooth(
       camera.position.x,
