@@ -21,6 +21,7 @@ class GameContainer extends Component {
     require('script-loader!app/components/object.js')
     require('script-loader!app/components/player.js')
     require('script-loader!app/components/slingshot.js')
+    require('script-loader!app/components/shootingPig.js')
 
     // Library
     require('script-loader!app/lib/clickable.js')

@@ -203,7 +203,7 @@ function instantiate() {
   )
   player.id = dispatch.clientId
 
-  shootingPig = new GameObject(
+  shootingPig = new ShootingPig(
     { x: width / 2, y: height / 2 },
     { radius: 1 * objSize },
     { shape: 'circle', color: '#ffff00', movable: true, rotate: true }

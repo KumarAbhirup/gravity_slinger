@@ -15,11 +15,10 @@
   pop
   createVector
   shootingPig
-  GameObject
   objSize
   width
   height
-  shootingPig
+  ShootingPig
 */
 
 class Slingshot {
@@ -44,6 +43,8 @@ class Slingshot {
 
   fly() {
     this.sling.bodyB = null
+    shootingPig.settings.movable = false
+    shootingPig.body.movable = false
   }
 
   show() {
@@ -65,7 +66,7 @@ class Slingshot {
 
   reload() {
     shootingPig.destruct()
-    shootingPig = new GameObject(
+    shootingPig = new ShootingPig(
       { x: width / 2, y: height / 2 },
       { radius: 1 * objSize },
       { shape: 'circle', color: '#ffff00', movable: true, rotate: true }
