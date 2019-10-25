@@ -124,10 +124,14 @@ function gamePlay() {
       // if the bird is a bomb
       if (bird.settings.type === 2) {
         if (lives === 1) {
+          sndEnd.play(0, 1, 10)
           setTimeout(loseLife, 1000)
         } else {
+          sndLostLife.play(0, 1, 10)
           loseLife()
         }
+      } else {
+        sndEnemyHit.play(0, 1, 10)
       }
 
       bird.isShot = true

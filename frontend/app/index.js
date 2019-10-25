@@ -164,7 +164,7 @@ function preload() {
    */
   if (Koji.config.sounds.tap) sndTap = loadSound(Koji.config.sounds.tap)
   if (Koji.config.sounds.match) sndMatch = loadSound(Koji.config.sounds.match)
-  if (Koji.config.sounds.end) sndEnd = loadSound(Koji.config.sounds.end)
+  if (Koji.config.sounds.lose) sndEnd = loadSound(Koji.config.sounds.lose)
   if (Koji.config.sounds.enemyHit)
     sndEnemyHit = loadSound(Koji.config.sounds.enemyHit)
   if (Koji.config.sounds.explosion)
@@ -304,7 +304,7 @@ function setup() {
    */
   if (Koji.config.sounds.backgroundMusic)
     sndMusic = loadSound(Koji.config.sounds.backgroundMusic, () =>
-      playMusic(sndMusic, 0.4, false)
+      playMusic(sndMusic, 0.4, true)
     )
 
   // Dispatch Events and Streamers
