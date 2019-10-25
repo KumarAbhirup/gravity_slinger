@@ -30,7 +30,7 @@
     "scoreText": "Score:",
     "highscoreText": "High Score:",
     "highscoreGainedText": "New High Score!",
-    "trialTesting": true,
+    "trialTesting": false,
     "emojis": [
       "😃",
       "😠",

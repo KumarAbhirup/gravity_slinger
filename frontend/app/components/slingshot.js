@@ -20,6 +20,8 @@
   height
   ShootingPig
   imgShootingPig
+  particlesEffect
+  imgLife
 */
 
 class Slingshot {
@@ -67,6 +69,15 @@ class Slingshot {
   }
 
   reload() {
+    particlesEffect(
+      imgLife,
+      {
+        x: width / 2,
+        y: height / 2,
+      },
+      10
+    )
+
     shootingPig.destruct()
     shootingPig = new ShootingPig(
       { x: width / 2, y: height / 2 },
