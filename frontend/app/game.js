@@ -94,6 +94,11 @@ function gamePlay() {
     bird.removeAfterGoneOutOfFrame()
   })
 
+  // If shootingPig is out, reload the sling.
+  if (shootingPig.wentOutOfFrame()) {
+    slingshot.reload()
+  }
+
   if (cameraTarget) {
     camera.position.x = Smooth(
       camera.position.x,

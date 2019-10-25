@@ -1,3 +1,4 @@
+/* eslint-disable no-global-assign */
 /* eslint-disable no-unused-vars */
 
 /* 
@@ -13,6 +14,12 @@
   push
   pop
   createVector
+  shootingPig
+  GameObject
+  objSize
+  width
+  height
+  shootingPig
 */
 
 class Slingshot {
@@ -54,5 +61,15 @@ class Slingshot {
 
   attach(body) {
     this.sling.bodyB = body
+  }
+
+  reload() {
+    shootingPig.destruct()
+    shootingPig = new GameObject(
+      { x: width / 2, y: height / 2 },
+      { radius: 1 * objSize },
+      { shape: 'circle', color: '#ffff00', movable: true, rotate: true }
+    )
+    this.attach(shootingPig.body)
   }
 }
