@@ -588,6 +588,10 @@ function touchEnded() {
     }
   }
 
+  setTimeout(() => {
+    slingshot.fly()
+  }, 100)
+
   touching = false
 }
 
