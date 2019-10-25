@@ -1,5 +1,6 @@
 {
   "images": {
+    "shootingPigImage": "https://i.ibb.co/jr6bv1f/angry-pig.png",
     "birdImage1": "https://images.koji-cdn.com/23315a20-566e-4602-beb7-be1eb766391d/8d9525da0d7c4698b2933b977ecd87da.png",
     "birdImage2": "https://images.koji-cdn.com/23315a20-566e-4602-beb7-be1eb766391d/star.png",
     "birdImage3": "https://i.ibb.co/f9pZjgw/grna.png",
@@ -31,21 +32,27 @@
       "source": "images.json",
       "fields": [
         {
+          "key": "shootingPigImage",
+          "name": "Shooting Pig Image",
+          "description": "Ideal size: 100x100",
+          "type": "image"
+        },
+        {
           "key": "birdImage1",
-          "name": "Ball Image 1",
+          "name": "Bird Image 1",
           "description": "Ideal size: 100x100",
           "type": "image"
         },
         {
           "key": "birdImage2",
-          "name": "Ball Image 2",
+          "name": "Bird Image 2",
           "description": "Ideal size: 100x100",
           "type": "image"
         },
         {
           "key": "birdImage3",
           "name": "Bomb Image",
-          "description": "Ideal size: 100x100. This image should have a negative sentiment showing that clicking the circle with this image would be dangerous.",
+          "description": "Ideal size: 100x100. This image should have a negative sentiment showing that hitting the circle with this image would be dangerous.",
           "type": "image"
         },
         {

@@ -70,6 +70,7 @@ let score = 0
 let comboTexts = []
 
 // Images
+let imgShootingPig
 let imgBirds = []
 let imgLife
 let imgBackground
@@ -147,6 +148,7 @@ function preload() {
   }
 
   // Load images
+  imgShootingPig = loadImage(Koji.config.images.shootingPigImage)
   imgBirds[0] = loadImage(Koji.config.images.birdImage1)
   imgBirds[1] = loadImage(Koji.config.images.birdImage2)
   imgBirds[2] = loadImage(Koji.config.images.birdImage3)
@@ -206,7 +208,7 @@ function instantiate() {
   shootingPig = new ShootingPig(
     { x: width / 2, y: height / 2 },
     { radius: 1 * objSize },
-    { shape: 'circle', color: '#ffff00', movable: true, rotate: true }
+    { shape: 'circle', image: imgShootingPig, movable: true, rotate: true }
   )
 
   slingshot = new Slingshot(
