@@ -45,6 +45,7 @@ class Slingshot {
     this.sling.bodyB = null
     shootingPig.settings.movable = false
     shootingPig.body.movable = false
+    shootingPig.flying = true
   }
 
   show() {

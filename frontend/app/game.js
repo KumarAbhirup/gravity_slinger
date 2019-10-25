@@ -99,6 +99,37 @@ function gamePlay() {
     slingshot.reload()
   }
 
+  // Check shootingPig and birds collision
+  birds.forEach(bird => {
+    if (
+      bird.didTouch(
+        { sizing: shootingPig.sizing, body: shootingPig.body },
+        'circle'
+      ) &&
+      shootingPig.flying &&
+      !bird.isShot
+    ) {
+      addScore(
+        bird.settings.scoreGivenAfterBusting,
+        imgLife,
+        { x: bird.body.position.x, y: bird.body.position.y },
+        10,
+        { floatingText: true }
+      )
+
+      // if the bird is a bomb
+      if (bird.settings.type === 2) {
+        if (lives === 1) {
+          setTimeout(loseLife, 1000)
+        } else {
+          loseLife()
+        }
+      }
+
+      bird.isShot = true
+    }
+  })
+
   if (cameraTarget) {
     camera.position.x = Smooth(
       camera.position.x,

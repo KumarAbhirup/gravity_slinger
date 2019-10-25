@@ -19,4 +19,6 @@ class ShootingPig extends GameObject {
 
     Body.setDensity(this.body, 99999999)
   }
+
+  flying = false
 }
