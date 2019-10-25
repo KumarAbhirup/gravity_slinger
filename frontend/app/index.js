@@ -675,6 +675,7 @@ function init() {
   emojis = []
   enemies = []
   users = []
+  birds = []
 
   dispatch.disconnect()
   dispatch.connect()
