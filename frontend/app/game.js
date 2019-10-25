@@ -31,31 +31,35 @@ function gamePlay() {
   ;(() => {
     birdTimer += 1 / 60
 
-    const interval = isMobile ? 0.85 : 1
+    const interval = isMobile ? 1.25 : 1
     const birdSize = isMobile ? 1.5 : 2
 
     if (birdTimer >= interval) {
       const birdType = random(birdTypes)
 
       const pushBird = () => {
-        birds.push(
-          new GameObject(
-            {
-              x: random(0, width),
-              y: 0 - objSize * random(2, 4),
-            },
-            { radius: objSize * birdSize },
-            {
-              shape: 'circle',
-              image: birdType.image,
-              movable: false,
-              rotate: Koji.config.strings.rotateFallingBirds || true,
-              type: birdType.type,
-              scoreGivenAfterBusting: birdType.scoreGivenAfterBusting,
-              scoreGivenAfterOut: birdType.scoreGivenAfterOut,
-            }
-          )
+        const bird = new GameObject(
+          {
+            x: random(0, width),
+            y: 0 - objSize * random(2, 4),
+          },
+          { radius: objSize * birdSize },
+          {
+            shape: 'circle',
+            image: birdType.image,
+            movable: false,
+            rotate: Koji.config.strings.rotateFallingBirds || true,
+            type: birdType.type,
+            scoreGivenAfterBusting: birdType.scoreGivenAfterBusting,
+            scoreGivenAfterOut: birdType.scoreGivenAfterOut,
+          }
         )
+
+        if (isMobile) {
+          Matter.Body.setDensity(bird.body, 0.009)
+        }
+
+        birds.push(bird)
       }
 
       pushBird()
