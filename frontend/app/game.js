@@ -164,10 +164,10 @@ function gamePlay() {
     gameMessages[i].isFirst = i === 0
   }
 
-  for (let i = 0; i < emojis.length; i += 1) {
-    emojis[i].update()
-    emojis[i].render()
-  }
+  // for (let i = 0; i < emojis.length; i += 1) {
+  //   emojis[i].update()
+  //   emojis[i].render()
+  // }
 
   // Draw Timer! (Comment this blob of code if you don't want timer)
   if (Koji.config.strings.enableTimer) {
