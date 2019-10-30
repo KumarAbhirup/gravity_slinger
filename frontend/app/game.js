@@ -89,8 +89,9 @@ function gamePlay() {
   camera.on()
 
   // Show
-  shootingPig.show()
   slingshot.show()
+  stick.show()
+  shootingPig.show()
 
   // Birds
   birds.forEach(bird => {

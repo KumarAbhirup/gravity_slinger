@@ -56,7 +56,7 @@ class Slingshot {
       const posB = this.sling.bodyB.position
 
       push()
-      stroke('#ffffff')
+      stroke(Koji.config.colors.slingColor)
       strokeWeight(4)
       line(posA.x, posA.y, posB.x, posB.y)
       pop()

@@ -1,5 +1,6 @@
 {
   "colors": {
+    "slingColor": "#CBB382",
     "backgroundColor": "#0a0a31",
     "gameBorderColor": "#ffffff",
     "textColor": "#ffffff",
@@ -21,111 +22,119 @@
     "timerText": "#ffff00",
     "gameOverRectangleColor": "#222222"
   },
-  "@@editor": [{
-    "key": "colors",
-    "name": "Colors",
-    "icon": "🎨",
-    "source": "colors.json",
-    "fields": [{
-        "key": "backgroundColor",
-        "name": "Background color",
-        "type": "color"
-      },
-      {
-        "key": "gameBorderColor",
-        "name": "Arena Border Color",
-        "type": "color"
-      },
-      {
-        "key": "titleColor",
-        "name": "Game Title Color",
-        "type": "color"
-      },
-      {
-        "key": "instructionsColor",
-        "name": "Game Instructions Color",
-        "type": "color"
-      },
-      {
-        "key": "scoreColor",
-        "name": "Score color",
-        "type": "color"
-      },
-      {
-        "key": "highscoreColor",
-        "name": "High Score color",
-        "type": "color"
-      },
-      {
-        "key": "playButtonTextColor",
-        "name": "Play Button Text Color",
-        "type": "color"
-      },
-      {
-        "key": "playButtonColor",
-        "name": "Play Button Color",
-        "type": "color"
-      },
-      {
-        "key": "playButtonHoverColor",
-        "name": "Play Button Hover Color",
-        "type": "color"
-      },
-      {
-        "key": "playButtonClickColor",
-        "name": "Play Button Click Color",
-        "type": "color"
-      },
-      {
-        "key": "buttonTextColor",
-        "name": "Button Text Color",
-        "type": "color"
-      },
-      {
-        "key": "buttonColor",
-        "name": "Button Color",
-        "type": "color"
-      },
-      {
-        "key": "buttonHoverColor",
-        "name": "Button Hover Color",
-        "type": "color"
-      },
-      {
-        "key": "buttonClickColor",
-        "name": "Button Click Color",
-        "type": "color"
-      },
-      {
-        "key": "lifeColor",
-        "name": "Life Text Color",
-        "type": "color"
-      },
-      {
-        "key": "textColor",
-        "name": "Text Color",
-        "type": "color"
-      },
-      {
-        "key": "floatingTextColor",
-        "name": "Floating Text Color",
-        "type": "color"
-      },
-      {
-        "key": "negativeFloatingTextColor",
-        "name": "Negative Floating Text Color",
-        "type": "color"
-      },
-      {
-        "key": "timerText",
-        "name": "Timer Text Color",
-        "type": "color"
-      },
-      {
-        "key": "gameOverRectangleColor",
-        "name": "Game Over Rectangle Background Color",
-        "type": "color"
-      }
-    ]
-  }]
+  "@@editor": [
+    {
+      "key": "colors",
+      "name": "Colors",
+      "icon": "🎨",
+      "source": "colors.json",
+      "fields": [
+        {
+          "key": "slingColor",
+          "name": "Sling color",
+          "type": "color"
+        },
+        {
+          "key": "backgroundColor",
+          "name": "Background color",
+          "type": "color"
+        },
+        {
+          "key": "gameBorderColor",
+          "name": "Arena Border Color",
+          "type": "color"
+        },
+        {
+          "key": "titleColor",
+          "name": "Game Title Color",
+          "type": "color"
+        },
+        {
+          "key": "instructionsColor",
+          "name": "Game Instructions Color",
+          "type": "color"
+        },
+        {
+          "key": "scoreColor",
+          "name": "Score color",
+          "type": "color"
+        },
+        {
+          "key": "highscoreColor",
+          "name": "High Score color",
+          "type": "color"
+        },
+        {
+          "key": "playButtonTextColor",
+          "name": "Play Button Text Color",
+          "type": "color"
+        },
+        {
+          "key": "playButtonColor",
+          "name": "Play Button Color",
+          "type": "color"
+        },
+        {
+          "key": "playButtonHoverColor",
+          "name": "Play Button Hover Color",
+          "type": "color"
+        },
+        {
+          "key": "playButtonClickColor",
+          "name": "Play Button Click Color",
+          "type": "color"
+        },
+        {
+          "key": "buttonTextColor",
+          "name": "Button Text Color",
+          "type": "color"
+        },
+        {
+          "key": "buttonColor",
+          "name": "Button Color",
+          "type": "color"
+        },
+        {
+          "key": "buttonHoverColor",
+          "name": "Button Hover Color",
+          "type": "color"
+        },
+        {
+          "key": "buttonClickColor",
+          "name": "Button Click Color",
+          "type": "color"
+        },
+        {
+          "key": "lifeColor",
+          "name": "Life Text Color",
+          "type": "color"
+        },
+        {
+          "key": "textColor",
+          "name": "Text Color",
+          "type": "color"
+        },
+        {
+          "key": "floatingTextColor",
+          "name": "Floating Text Color",
+          "type": "color"
+        },
+        {
+          "key": "negativeFloatingTextColor",
+          "name": "Negative Floating Text Color",
+          "type": "color"
+        },
+        {
+          "key": "timerText",
+          "name": "Timer Text Color",
+          "type": "color"
+        },
+        {
+          "key": "gameOverRectangleColor",
+          "name": "Game Over Rectangle Background Color",
+          "type": "color"
+        }
+      ]
+    }
+  ]
 }

@@ -29,6 +29,7 @@ let player
 let enemies = []
 
 let birds = []
+let stick
 let shootingPig
 let slingshot
 
@@ -72,6 +73,7 @@ let comboTexts = []
 // Images
 let imgShootingPig
 let imgBirds = []
+let imgStick
 let imgLife
 let imgBackground
 
@@ -149,6 +151,7 @@ function preload() {
 
   // Load images
   imgShootingPig = loadImage(Koji.config.images.shootingPigImage)
+  imgStick = loadImage(Koji.config.images.stickImage)
   imgBirds[0] = loadImage(Koji.config.images.birdImage1)
   imgBirds[1] = loadImage(Koji.config.images.birdImage2)
   imgBirds[2] = loadImage(Koji.config.images.birdImage3)
@@ -204,6 +207,19 @@ function instantiate() {
     }
   )
   player.id = dispatch.clientId
+
+  stick = new GameObject(
+    {
+      x: width / 2,
+      y: height / 2 + height / 4,
+    },
+    { width: objSize, height: height / 2 },
+    {
+      shape: 'rectangle',
+      image: imgStick,
+    }
+  )
+  stick.destruct()
 
   shootingPig = new ShootingPig(
     { x: width / 2, y: height / 2 },
