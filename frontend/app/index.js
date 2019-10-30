@@ -246,7 +246,7 @@ function instantiate() {
     {
       type: 2,
       image: imgBirds[2],
-      scoreGivenAfterBusting: -100,
+      scoreGivenAfterBusting: -50,
       scoreGivenAfterOut: 0,
     },
   ]
@@ -298,7 +298,7 @@ function setup() {
   engine = Engine.create()
   world = engine.world
 
-  engine.world.gravity.y = 0.3
+  engine.world.gravity.y = 0.25
 
   mouse = Mouse.create(canvas.elt)
   const options = {
