@@ -298,7 +298,7 @@ function setup() {
   engine = Engine.create()
   world = engine.world
 
-  engine.world.gravity.y = 0.5
+  engine.world.gravity.y = 0.3
 
   mouse = Mouse.create(canvas.elt)
   const options = {
