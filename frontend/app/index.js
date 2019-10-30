@@ -211,11 +211,7 @@ function instantiate() {
     { shape: 'circle', image: imgShootingPig, movable: true, rotate: true }
   )
 
-  slingshot = new Slingshot(
-    width / 2,
-    height / 2 + height * 0.15,
-    shootingPig.body
-  )
+  slingshot = new Slingshot(width / 2, height / 2, shootingPig.body)
 
   // Bird Types
   birdTypes = [

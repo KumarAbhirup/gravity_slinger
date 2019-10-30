@@ -36,7 +36,6 @@ class Slingshot {
       },
       bodyB: body,
       stiffness: 0.05,
-      length: 75,
     }
 
     this.sling = Constraint.create(options)
