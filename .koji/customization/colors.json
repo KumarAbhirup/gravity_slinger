@@ -8,7 +8,7 @@
     "playButtonColor": "#ffda5a",
     "buttonTextColor": "#222222",
     "buttonColor": "#2CECF5",
-    "scoreColor": "#ffda5a",
+    "scoreColor": "#ff0000",
     "highscoreColor": "#ffda5a",
     "titleColor": "#ffda5a",
     "instructionsColor": "#dfdcea",
@@ -17,9 +17,9 @@
     "buttonHoverColor": "#23bcc5",
     "buttonClickColor": "#2CECF5",
     "lifeColor": "#d54b8c",
-    "floatingTextColor": "#ffff00",
-    "negativeFloatingTextColor": "#ffffff",
-    "timerText": "#ffff00",
+    "floatingTextColor": "#d54b8c",
+    "negativeFloatingTextColor": "#000000",
+    "timerText": "#000000",
     "gameOverRectangleColor": "#222222"
   },
   "@@editor": [
