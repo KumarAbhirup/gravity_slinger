@@ -20,7 +20,7 @@
     "floatingTextColor": "#d54b8c",
     "negativeFloatingTextColor": "#000000",
     "timerText": "#000000",
-    "gameOverRectangleColor": "#222222"
+    "gameOverRectangleColor": "#ffffff"
   },
   "@@editor": [
     {

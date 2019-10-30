@@ -32,7 +32,7 @@ function gamePlay() {
     birdTimer += 1 / 60
 
     const interval = isMobile ? 1.25 : 1
-    const birdSize = isMobile ? 1.5 : 2
+    const birdSize = isMobile ? 1.5 : 1.75
 
     if (birdTimer >= interval) {
       const birdType = random(birdTypes)
