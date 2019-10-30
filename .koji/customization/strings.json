@@ -10,7 +10,7 @@
     "mobile_instructions3": "Touch drag the pig and release your finger to hit.",
     "defaultRoomName": "Koji",
     "defaultPlayerName": "Enter your name",
-    "maxConnectionsPerShard": "2",
+    "maxConnectionsPerShard": "20",
     "lives": "3",
     "arenaSize": 3000,
     "minimumScoreToSave": "1",
