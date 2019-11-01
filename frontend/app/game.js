@@ -125,7 +125,7 @@ function gamePlay() {
       )
 
       slingshot.reload()
-      bird.removable = true
+      bird.destruct()
 
       // if the bird is a bomb
       if (bird.settings.type === 2) {
