@@ -271,19 +271,19 @@ function instantiate() {
     {
       type: 0,
       image: imgBirds[0],
-      scoreGivenAfterBusting: 50,
+      scoreGivenAfterBusting: 100,
       scoreGivenAfterOut: -50,
     },
     {
       type: 1,
       image: imgBirds[1],
-      scoreGivenAfterBusting: 25,
+      scoreGivenAfterBusting: 50,
       scoreGivenAfterOut: -5,
     },
     {
       type: 2,
       image: imgBirds[2],
-      scoreGivenAfterBusting: -50,
+      scoreGivenAfterBusting: -20,
       scoreGivenAfterOut: 0,
     },
   ]
