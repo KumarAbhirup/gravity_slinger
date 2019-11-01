@@ -124,6 +124,9 @@ function gamePlay() {
         { floatingText: true }
       )
 
+      slingshot.reload()
+      bird.removable = true
+
       // if the bird is a bomb
       if (bird.settings.type === 2) {
         if (lives === 1) {

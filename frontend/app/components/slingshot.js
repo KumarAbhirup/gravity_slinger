@@ -23,6 +23,8 @@
   particlesEffect
   imgLife
   stick
+  random
+  imgBirds
 */
 
 class Slingshot {
@@ -70,7 +72,7 @@ class Slingshot {
 
   reload() {
     particlesEffect(
-      imgLife,
+      random(imgBirds),
       {
         x: objSize * 9,
         y: height / 2 + height / 3 - stick.sizing.height / 2,
