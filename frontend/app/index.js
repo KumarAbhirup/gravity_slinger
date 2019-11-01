@@ -62,6 +62,8 @@ let leaderboardButton
 let reloadButton
 let endButton
 
+let reloadTouched = false
+
 // Score data
 let lives
 let startingLives
@@ -613,17 +615,21 @@ function touchEnded() {
     }
   }
 
-  setTimeout(() => {
-    slingshot.fly()
-  }, 100)
+  if (mouseX < stick.body.position.x + objSize * 3) {
+    setTimeout(() => {
+      slingshot.fly()
+    }, 100)
+  }
 
   touching = false
 }
 
 function mouseReleased() {
-  setTimeout(() => {
-    slingshot.fly()
-  }, 100)
+  if (mouseX < stick.body.position.x + objSize * 3) {
+    setTimeout(() => {
+      slingshot.fly()
+    }, 100)
+  }
 }
 
 // Key pressed and released

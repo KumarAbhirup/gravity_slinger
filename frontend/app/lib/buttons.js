@@ -230,9 +230,11 @@ class ReloadButton {
 
     this.btn.onPress = function() {
       this.color = Koji.config.colors.buttonClickColor
+      reloadTouched = false
     }
 
     this.btn.onRelease = function() {
+      reloadTouched = true
       slingshot.reload()
     }
   }
