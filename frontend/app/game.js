@@ -40,7 +40,7 @@ function gamePlay() {
       const pushBird = () => {
         const bird = new GameObject(
           {
-            x: random(0, width),
+            x: random(objSize * 12, width),
             y: 0 - objSize * random(2, 4),
           },
           { radius: objSize * birdSize },
