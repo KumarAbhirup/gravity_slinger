@@ -27,46 +27,38 @@ function gamePlay() {
     touchCurrentY = camera.mouseY
   }
 
-  // Spawn a bird every second
-  ;(() => {
-    birdTimer += 1 / 60
-
-    const interval = isMobile ? 1.25 : 1
+  // If less than 5 birds or all bombs
+  if (birds.length < 5 || !birds.some(bird => bird.settings.type !== 2)) {
     const birdSize = isMobile ? 1.5 : 1.75
+    const birdType = random(birdTypes)
 
-    if (birdTimer >= interval) {
-      const birdType = random(birdTypes)
-
-      const pushBird = () => {
-        const bird = new GameObject(
-          {
-            x: random(objSize * 12, width),
-            y: 0 - objSize * random(2, 4),
-          },
-          { radius: objSize * birdSize },
-          {
-            shape: 'circle',
-            image: birdType.image,
-            movable: false,
-            rotate: Koji.config.strings.rotateFallingBirds || true,
-            type: birdType.type,
-            scoreGivenAfterBusting: birdType.scoreGivenAfterBusting,
-            scoreGivenAfterOut: birdType.scoreGivenAfterOut,
-          }
-        )
-
-        if (isMobile) {
-          Matter.Body.setDensity(bird.body, 0.009)
+    const pushBird = () => {
+      const bird = new GameObject(
+        {
+          x: random(objSize * 12, width),
+          y: 0 - objSize * random(2, 4),
+        },
+        { radius: objSize * birdSize },
+        {
+          shape: 'circle',
+          image: birdType.image,
+          movable: false,
+          rotate: Koji.config.strings.rotateFallingBirds || true,
+          type: birdType.type,
+          scoreGivenAfterBusting: birdType.scoreGivenAfterBusting,
+          scoreGivenAfterOut: birdType.scoreGivenAfterOut,
         }
+      )
 
-        birds.push(bird)
-      }
+      // if (isMobile) {
+      //   Matter.Body.setDensity(bird.body, 0.009)
+      // }
 
-      pushBird()
-
-      birdTimer = 0
+      birds.push(bird)
     }
-  })()
+
+    pushBird()
+  }
 
   // Make the mouse constraint only work for movable bodies
   World.remove(world, mConstraint) // No mouse movement by default
@@ -124,7 +116,7 @@ function gamePlay() {
         { floatingText: true }
       )
 
-      slingshot.reload()
+      // slingshot.reload()
       bird.destruct()
 
       // if the bird is a bomb
