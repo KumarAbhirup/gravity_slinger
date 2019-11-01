@@ -17,7 +17,7 @@ class ShootingPig extends GameObject {
     this.body.positionPrev.x = this.body.position.x
     this.body.positionPrev.y = this.body.position.y
 
-    Body.setDensity(this.body, 99999999)
+    Body.setMass(this.body, 100)
   }
 
   flying = false

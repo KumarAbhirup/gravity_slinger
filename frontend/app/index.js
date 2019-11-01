@@ -227,7 +227,7 @@ function instantiate() {
 
   ground2 = new GameObject(
     {
-      x: random(objSize * 12, width),
+      x: random(width / 2, width - (objSize * 10) / 2),
       y: height - objSize * 10,
     },
     { width: objSize * 10, height: objSize * 2 },
