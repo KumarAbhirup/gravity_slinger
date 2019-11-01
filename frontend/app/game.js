@@ -154,16 +154,16 @@ function gamePlay() {
 
   camera.off()
 
-  updateGameStatus()
+  // updateGameStatus()
 
   // Game messages
-  for (let i = 0; i < gameMessages.length; i += 1) {
-    gameMessages[i].goalPos.y = i * (gameMessages[i].size + objSize * 0.1)
-    gameMessages[i].update()
-    gameMessages[i].render()
+  // for (let i = 0; i < gameMessages.length; i += 1) {
+  //   gameMessages[i].goalPos.y = i * (gameMessages[i].size + objSize * 0.1)
+  //   gameMessages[i].update()
+  //   gameMessages[i].render()
 
-    gameMessages[i].isFirst = i === 0
-  }
+  //   gameMessages[i].isFirst = i === 0
+  // }
 
   // for (let i = 0; i < emojis.length; i += 1) {
   //   emojis[i].update()
@@ -253,10 +253,10 @@ function updateGameStatus() {
   text(gameStatusText, x, y)
   pop()
 
-  push()
-  textSize(txtSize)
-  fill(Koji.config.colors.negativeFloatingTextColor)
-  textAlign(RIGHT, TOP)
-  text(scoreText, x, y * 1.3)
-  pop()
+  // push()
+  // textSize(txtSize)
+  // fill(Koji.config.colors.negativeFloatingTextColor)
+  // textAlign(RIGHT, TOP)
+  // text(scoreText, x, y * 1.3)
+  // pop()
 }

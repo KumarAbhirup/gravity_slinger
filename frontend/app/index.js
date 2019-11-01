@@ -319,56 +319,56 @@ function setup() {
       playMusic(sndMusic, 0.4, true)
     )
 
-  // Dispatch Events and Streamers
-  dispatch.on(dispatchEvent.CONNECTED, payload => {})
+  // // Dispatch Events and Streamers
+  // dispatch.on(dispatchEvent.CONNECTED, payload => {})
 
-  dispatch.on(dispatchEvent.CONNECTED_CLIENTS_CHANGED, data => {
-    // connectedClients is an object of the form { clientId: { userInfo } }
-    users = data.connectedClients
-    handleNewConnection()
-  })
+  // dispatch.on(dispatchEvent.CONNECTED_CLIENTS_CHANGED, data => {
+  //   // connectedClients is an object of the form { clientId: { userInfo } }
+  //   users = data.connectedClients
+  //   handleNewConnection()
+  // })
 
-  // Enemy Update
-  dispatch.on('enemy_update', payload => {
-    enemies.forEach(enemy => {
-      if (enemy.id === payload.id) {
-        enemy.score = payload.score
-        enemy.lives = payload.lives
-        enemy.name = payload.name
-      }
-    })
-  })
+  // // Enemy Update
+  // dispatch.on('enemy_update', payload => {
+  //   enemies.forEach(enemy => {
+  //     if (enemy.id === payload.id) {
+  //       enemy.score = payload.score
+  //       enemy.lives = payload.lives
+  //       enemy.name = payload.name
+  //     }
+  //   })
+  // })
 
-  // Chat listeners
-  dispatch.on('global_message', payload => {
-    spawnMessage(payload.message, payload.color)
-  })
+  // // Chat listeners
+  // dispatch.on('global_message', payload => {
+  //   spawnMessage(payload.message, payload.color)
+  // })
 
-  dispatch.on('chat_message', payload => {
-    let txt = `${payload.sender}: ${payload.message}`
-    spawnMessage(txt, Koji.config.colors.floatingTextColor)
-  })
+  // dispatch.on('chat_message', payload => {
+  //   let txt = `${payload.sender}: ${payload.message}`
+  //   spawnMessage(txt, Koji.config.colors.floatingTextColor)
+  // })
 
   /**
    * Handle disconnect if user exits the whole tab
    * Not working all the time currently
    */
-  window.addEventListener('beforeunload', event => {
-    if (dispatch) {
-      dispatch.disconnect()
-      console.log('Dispatch Disconnected')
-    }
-  })
+  // window.addEventListener('beforeunload', event => {
+  //   if (dispatch) {
+  //     dispatch.disconnect()
+  //     console.log('Dispatch Disconnected')
+  //   }
+  // })
 
-  dispatch.connect()
+  // dispatch.connect()
 
   if (dataInterval) {
     clearInterval(dataInterval)
   }
 
-  dataInterval = setInterval(manageData, dataSendPeriod)
+  // dataInterval = setInterval(manageData, dataSendPeriod)
 
-  roomName = localStorage.getItem('roomName')
+  // roomName = localStorage.getItem('roomName')
 
   init()
 }

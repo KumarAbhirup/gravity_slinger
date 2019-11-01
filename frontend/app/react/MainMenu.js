@@ -23,7 +23,7 @@ class MainMenu extends Component {
     this.state = {
       font: 'Arial',
       playerName: Koji.config.strings.defaultPlayerName,
-      roomName: Koji.config.strings.defaultRoomName,
+      // roomName: Koji.config.strings.defaultRoomName,
     }
   }
 
@@ -53,10 +53,10 @@ class MainMenu extends Component {
       //
     }
 
-    let roomName = Koji.config.strings.defaultRoomName
-    if (localStorage.getItem('roomName')) {
-      roomName = localStorage.getItem('roomName')
-    }
+    // let roomName = Koji.config.strings.defaultRoomName
+    // if (localStorage.getItem('roomName')) {
+    //   roomName = localStorage.getItem('roomName')
+    // }
 
     let _playerName = Koji.config.strings.defaultPlayerName
     if (localStorage.getItem('playerName')) {
@@ -64,7 +64,7 @@ class MainMenu extends Component {
     }
 
     this.setState({
-      roomName,
+      // roomName,
       playerName: _playerName,
     })
   }
@@ -99,7 +99,7 @@ class MainMenu extends Component {
   }
 
   startGame() {
-    localStorage.setItem('roomName', this.state.roomName.toLowerCase())
+    // localStorage.setItem('roomName', this.state.roomName.toLowerCase())
     localStorage.setItem('playerName', this.state.playerName)
 
     window.setAppView('game')
@@ -176,37 +176,6 @@ class MainMenu extends Component {
                 }}
                 type="text"
                 value={this.state.playerName}
-                style={{
-                  backgroundColor: Koji.config.colors.buttonColor,
-                  color: Koji.config.colors.buttonTextColor,
-                  borderColor: Koji.config.colors.titleColor,
-                  fontFamily: `${this.state.font}`,
-                }}
-                className="main-menu-input"
-                required
-              />
-            </div>
-
-            <div className="main-menu-field">
-              <label
-                className="main-menu-input-label"
-                style={{ color: Koji.config.colors.instructionsColor }}
-              >
-                Game Room
-              </label>
-              <input
-                placeholder={Koji.config.strings.defaultRoomName}
-                onChange={event => {
-                  this.setState({
-                    roomName: event.target.value,
-                  })
-                  localStorage.setItem(
-                    'roomName',
-                    event.target.value.toLowerCase()
-                  )
-                }}
-                type="text"
-                value={this.state.roomName}
                 style={{
                   backgroundColor: Koji.config.colors.buttonColor,
                   color: Koji.config.colors.buttonTextColor,
