@@ -59,6 +59,7 @@ let dataSendPeriod = 32
 let playButton
 let soundButton
 let leaderboardButton
+let reloadButton
 let endButton
 
 // Score data
@@ -322,6 +323,7 @@ function setup() {
   playButton = new PlayButton()
   soundButton = new SoundButton()
   leaderboardButton = new LeaderboardButton()
+  reloadButton = new ReloadButton()
   endButton = new EndButton()
 
   gameBeginning = false

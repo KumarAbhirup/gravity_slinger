@@ -27,6 +27,9 @@ function gamePlay() {
     touchCurrentY = camera.mouseY
   }
 
+  reloadButton.update()
+  reloadButton.btn.draw()
+
   // If less than 5 birds or all bombs
   if (birds.length < 5 || !birds.some(bird => bird.settings.type !== 2)) {
     const birdSize = isMobile ? 1.5 : 1.75

@@ -21,6 +21,7 @@
     "gameTimer": "120",
     "playButtonText": "PLAY NOW",
     "leaderboardButtonText": "LEADERBOARD",
+    "reloadButtonText": "RELOAD PIG",
     "changeCharacterText": "CHANGE CHARACTER",
     "endButtonText": "END GAME",
     "gameOverText": "GAME OVER",
@@ -190,6 +191,12 @@
           "key": "leaderboardButtonText",
           "name": "Leaderboard Button Text",
           "description": "Label on the Leaderboard Button",
+          "type": "text"
+        },
+        {
+          "key": "reloadButtonText",
+          "name": "Reload Button Text",
+          "description": "Label on the Reload Button",
           "type": "text"
         },
         {
