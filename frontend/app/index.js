@@ -32,6 +32,8 @@ let birds = []
 let stick
 let shootingPig
 let slingshot
+let ground1
+let ground2
 
 // Game Stuffs (READ-N-WRITE)
 let emojis = []
@@ -71,6 +73,7 @@ let score = 0
 let comboTexts = []
 
 // Images
+let imgGround
 let imgShootingPig
 let imgBirds = []
 let imgStick
@@ -151,6 +154,7 @@ function preload() {
 
   // Load images
   imgShootingPig = loadImage(Koji.config.images.shootingPigImage)
+  imgGround = loadImage(Koji.config.images.groundImage)
   imgStick = loadImage(Koji.config.images.stickImage)
   imgBirds[0] = loadImage(Koji.config.images.birdImage1)
   imgBirds[1] = loadImage(Koji.config.images.birdImage2)
@@ -207,6 +211,32 @@ function instantiate() {
     }
   )
   player.id = dispatch.clientId
+
+  ground1 = new GameObject(
+    {
+      x: width / 2,
+      y: height - (objSize * 2) / 2,
+    },
+    { width, height: objSize * 2 },
+    {
+      shape: 'rectangle',
+      image: imgGround,
+    }
+  )
+  ground1.body.isStatic = true
+
+  ground2 = new GameObject(
+    {
+      x: random(objSize * 12, width),
+      y: height - objSize * 10,
+    },
+    { width: objSize * 10, height: objSize * 2 },
+    {
+      shape: 'rectangle',
+      image: imgGround,
+    }
+  )
+  ground2.body.isStatic = true
 
   stick = new GameObject(
     {

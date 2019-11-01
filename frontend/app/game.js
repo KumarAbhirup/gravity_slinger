@@ -91,6 +91,8 @@ function gamePlay() {
   // Show
   slingshot.show()
   stick.show()
+  ground1.show()
+  ground2.show()
   shootingPig.show()
 
   // Birds

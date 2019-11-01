@@ -1,6 +1,7 @@
 {
   "images": {
     "stickImage": "https://i.ibb.co/QksrP2B/stick.png",
+    "groundImage": "https://i.ibb.co/NrDc1NP/ground.png",
     "shootingPigImage": "https://i.ibb.co/0FCzDh9/pig-96x104.png",
     "birdImage1": "https://i.ibb.co/rvQLCP6/10-104963-bird-clipart-monster-birds-clip-art-free.png",
     "birdImage2": "https://i.ibb.co/3T0ZCGQ/43-430095-large-blue-bird-png-cartoon-cute-flying-birds.png",
@@ -32,6 +33,18 @@
       "icon": "💪🏻",
       "source": "images.json",
       "fields": [
+        {
+          "key": "stickImage",
+          "name": "Stick Image",
+          "description": "Ideal size: Rectangular",
+          "type": "image"
+        },
+        {
+          "key": "groundImage",
+          "name": "Ground Image",
+          "description": "Ideal size: Rectangular",
+          "type": "image"
+        },
         {
           "key": "shootingPigImage",
           "name": "Shooting Pig Image",
