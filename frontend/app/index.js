@@ -210,8 +210,8 @@ function instantiate() {
 
   stick = new GameObject(
     {
-      x: width / 2,
-      y: height / 2 + height / 4,
+      x: objSize * 9,
+      y: height / 2 + height / 3,
     },
     { width: objSize, height: height / 2 },
     {
@@ -222,12 +222,16 @@ function instantiate() {
   stick.destruct()
 
   shootingPig = new ShootingPig(
-    { x: width / 2, y: height / 2 },
+    { x: objSize * 9, y: height / 2 + height / 3 - stick.sizing.height / 2 },
     { radius: 1 * objSize },
     { shape: 'circle', image: imgShootingPig, movable: true, rotate: true }
   )
 
-  slingshot = new Slingshot(width / 2, height / 2, shootingPig.body)
+  slingshot = new Slingshot(
+    objSize * 9,
+    height / 2 + height / 3 - stick.sizing.height / 2,
+    shootingPig.body
+  )
 
   // Bird Types
   birdTypes = [
